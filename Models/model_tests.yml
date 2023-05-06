@@ -1,0 +1,65 @@
+version: 2
+
+models:
+  - name: d_product_category
+    description: "d_product_category model"
+    columns:
+      - name: CATEGORY_ID
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: CATEGORY_NAME
+        tests:
+        - accepted_values:
+            values: [ 'Appliances', 'Baby', 'Clothing, Shoes and Jewelry', 'Health Care', 'Home & Kitchen', 'Luggage & Travel', 'Office Products', 'Sports & Outdoors', 'Grocery', 'Beauty']
+
+  - name: d_product
+    description: "d_product model"
+    columns:
+      - name: PRODUCT_ID
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: CATEGORY_ID
+        test:
+          - relationships:
+              to: ref('d_product_category')
+              field: CATEGORY_ID
+
+  - name: d_customer
+    description: "d_customer model"
+    columns:
+      - name: CUSTOMER_ID
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: CUSTOMER_NAME
+        tests:
+          - not_null
+
+  - name: d_customer_geography
+    description: "d_customer_geography model"
+    columns:
+      - name: zipcode
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: f_order
+    description: "f_order model"
+    columns:
+      - name: product_id
+        test:
+          - relationships:
+              to: ref('d_product')
+              field: product_id
+      - name: customer_id
+        test: 
+          - relationship:
+              to: ref('d_customer')
+              field: customer_id
+              
