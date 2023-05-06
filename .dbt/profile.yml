@@ -1,0 +1,24 @@
+online_shop_dwh_project:
+  outputs:
+    dev:
+      account: oe35951.ap-south-1.aws
+      database: online_store_dwh
+      password: DataEngr.1214
+      role: accountadmin
+      schema: raw_dev
+      threads: 1
+      type: snowflake
+      user: phase2
+      warehouse: compute_wh
+
+    prod:
+      account: oe35951.ap-south-1.aws
+      database: online_store_dwh
+      password: DataEngr.1214
+      role: accountadmin
+      schema: online_store_dwh
+      threads: 1
+      type: snowflake
+      user: phase2
+      warehouse: compute_wh
+  target: dev
