@@ -1,0 +1,60 @@
+
+version: 2
+
+sources:
+  - name: raw_data_1            # any name can be provided to the source, it'll be used to reference this source.
+    description: "raw tables"
+    database: AIRBYTE_DATABASE  # the database of snowflake from where raw data will be retrieved
+    schema: AIRBYTE_SCHEMA      # the staging schema of snowflake from raw data will be retrieved
+    tables:
+      - name: CUSTOMER
+        columns:
+          - name: CUSTOMER_ID
+          - name: CUSTOMER_NAME
+          - name: ZIP_CODE
+
+      - name: CUSTOMER_ORDER 
+        columns:
+          - name: CUSTOMER_ID
+          - name: ORDER_DATE
+          - name: ORDER_ID
+
+      - name: ORDER_DETAILS 
+        columns:
+          - name: ORDER_ID
+          - name: PRODUCT_ID
+          - name: QUANTITY
+          - name: UNIT_PRICE
+          - name: DISCOUNT
+          - name: TOTAL_PRICE
+
+      - name: PRODUCT 
+        columns:
+          - name: CATEGORY_ID
+          - name: PRODUCT_ID
+          - name: PRODUCT_NAME
+          - name: UNIT_PRICE
+
+      - name: PROD_CATEGORY 
+        columns:
+          - name: CATEGORY_ID
+          - name: CATEGORY_NAME
+          - name: CATEGORY_DESCRIPTION
+
+      - name: CUSTOMER_GEOGRAPHY_DATA 
+        columns:
+          - name: ZIPCODE
+          - name: STATE
+          - name: COUNTY
+          - name: CITY
+          - name: STATE_ABBR
+
+      - name: CUSTOMER_REVIEWS_DATA 
+        columns:
+          - name: CUSTOMER_ID
+          - name: ORDER_ID
+          - name: ORDER_DATE
+          - name: PRODUCT_ID
+          - name: PRODUCT_REVIEW_SCORE
+          
+          
