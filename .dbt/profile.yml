@@ -3,7 +3,7 @@ online_shop_dwh_project:
     dev:
       account: oe35951.ap-south-1.aws
       database: online_store_dwh
-      password: DataEngr.1214
+      password: *********
       role: accountadmin
       schema: raw_dev
       threads: 1
@@ -14,7 +14,7 @@ online_shop_dwh_project:
     prod:
       account: oe35951.ap-south-1.aws
       database: online_store_dwh
-      password: DataEngr.1214
+      password: *********
       role: accountadmin
       schema: online_store_dwh
       threads: 1
