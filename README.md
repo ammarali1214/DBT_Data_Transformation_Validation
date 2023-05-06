@@ -12,4 +12,6 @@
 
 3 - tests folder contains singulat test of f_order_total_price_test.sql
 
+4 - Airflow_Dag folder contains Airflow's dag file
+
 
