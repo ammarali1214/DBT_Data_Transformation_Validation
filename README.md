@@ -8,3 +8,5 @@ Models/Dimensions/ contains all models of dimensional tables
 
 Models/fact_folder/ contains all models of fact tables
 
+Models/aggs_folder/ contains the model of Aggregate Table
+
