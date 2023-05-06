@@ -1,4 +1,4 @@
-### DBT_Data_Transformation_Validation
+## DBT_Data_Transformation_Validation
 
 1 - .dbt folder contains profile.yml file
 
@@ -14,4 +14,4 @@
 
 4 - Airflow_Dag folder contains Airflow's dag file
 
-
+5 - dbt_project.yml project file
