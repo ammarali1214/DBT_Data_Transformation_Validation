@@ -1,4 +1,6 @@
 
+# Source is the stagging layer of DWH
+
 version: 2
 
 sources:
